@@ -15,7 +15,7 @@ allocation adapts, and effects differ across users.
 
 ## Why simulation first
 
-Five of the five studies are simulations before they are applications. That is
+All five studies are simulations before they are applications. That is
 deliberate: in a simulation the ground truth is known, so bias, coverage and
 error rates are *measurable* rather than assumed. Every study is built around
 the same discipline:

@@ -5,6 +5,11 @@ methodology and what happens when a team runs experiments for real: people peek
 at dashboards, variance is huge, users interfere with each other, treatment
 allocation adapts, and effects differ across users.
 
+**Vibe-coded, and saying so.** The implementation is AI-written under human
+direction — see [how this was built](#how-this-was-built--vibe-coding-declared).
+Every claim in the reports is checked by a validation suite you can run, which
+is what makes that acceptable here.
+
 | # | Study | Question | Status |
 |---|---|---|---|
 | 01 | [Sequential testing](studies/01-sequential/README.md) | Which stopping method keeps FPR at 5%, and what does each cost? | **Done** — 5 families, 16 validation checks |
@@ -45,7 +50,41 @@ docs/
   methods.md                 how each method works: intuition, formulas, implementation choices
   method_comparison.md       sequential methods vs each other and vs open-source implementations
 REFERENCES.md                annotated bibliography for all five studies
+LICENSE                      MIT
 ```
+
+## How this was built — vibe coding, declared
+
+This repository is **vibe-coded**: the code was written by an AI assistant
+(WorkBuddy) working from human direction, not typed line by line by hand. The
+studies, the method choices, the design contracts in `docs/roadmap.md`, the
+reading of every result and the decisions about what to report were human; the
+implementations, the refactors, the figures and the prose drafts were generated
+and then reviewed.
+
+That is a real caveat, and it is stated rather than hidden, because the usual
+failure mode of AI-written simulation code is confidently wrong statistics that
+still draw a plausible plot. Three things make the claims here checkable anyway:
+
+- **The numbers are not the model's opinion.** Each study ships a validation
+  suite (`python -m explabs.<study>.validate`, 148 checks in total) that
+  compares the code against closed forms, published tables and independent
+  Monte Carlo: the OBF boundary vector reproduces alpha = 0.04996 against the
+  published 0.05, and the p-value machinery agrees with `statsmodels` to
+  2.8e-06. Run it — it exits non-zero on failure.
+- **Ground truth is constructed, not asserted.** Bias, coverage and error rates
+  are measured against simulators whose truth is known by definition, so a
+  wrong implementation shows up as a number that misses, not as a broken build.
+- **The bugs are documented.** Where a first implementation was wrong — the
+  causal forest that predicted a constant for everyone, the Hájek standard error
+  that was `T`-fold too small, the summary table that silently averaged over
+  horizons — the failure and the fix are recorded in
+  [`docs/methods.md`](docs/methods.md) instead of being erased.
+
+If you are reading this as work: `docs/roadmap.md` says what each study was
+supposed to establish, the validation suites say whether the code does it, and
+the measured tables in each study README are the deliverable. The prose is a
+summary of what the runs said.
 
 ## Running
 

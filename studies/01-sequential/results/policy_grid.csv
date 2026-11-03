@@ -1,0 +1,29 @@
+policy,family,looks,config,relative_lift,horizon_days,reject_rate,early_stop_rate,mean_day,median_day,mean_users,median_users,baseline_users,saved_vs_fixed
+fixed_horizon,unadjusted,1,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0477,0.0,30.0,30.0,120000,120000,120000,0.0
+naive_peek_e1,unadjusted,30,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.24,0.236,25.23,30.0,100929,120000,120000,0.15892499999999998
+naive_peek_e5,unadjusted,6,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.1577,0.144,27.33,30.0,109327,120000,120000,0.0889416666666667
+naive_peek_e10,unadjusted,3,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.1097,0.0847,28.61,30.0,114453,120000,120000,0.04622499999999996
+naive_peek_e30,unadjusted,1,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0477,0.0,30.0,30.0,120000,120000,120000,0.0
+bonferroni_e1,bonferroni,30,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0123,0.012,29.77,30.0,119092,120000,120000,0.0075666666666667215
+bonferroni_e5,bonferroni,6,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0347,0.0337,29.39,30.0,117573,120000,120000,0.02022500000000005
+bonferroni_e10,bonferroni,3,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0363,0.03,29.53,30.0,118133,120000,120000,0.01555833333333334
+bonferroni_e30,bonferroni,1,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0477,0.0,30.0,30.0,120000,120000,120000,0.0
+obf_e5,group sequential,6,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0447,0.0297,29.73,30.0,118933,120000,120000,0.008891666666666631
+obf_e10,group sequential,3,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0467,0.017,29.82,30.0,119293,120000,120000,0.005891666666666628
+obf_e30,group sequential,1,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0477,0.0,30.0,30.0,120000,120000,120000,0.0
+msprt_tau0.005,always-valid,30,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.0103,0.0097,29.86,30.0,119424,120000,120000,0.0048000000000000265
+bayes_sd0.01,bayesian,30,bernoulli lift=+0.0% traffic=2000/day horizon=30d,0.0,30,0.202,0.1973,26.22,30.0,104865,120000,120000,0.12612500000000004
+fixed_horizon,unadjusted,1,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8197,0.0,30.0,30.0,120000,120000,120000,0.0
+naive_peek_e1,unadjusted,30,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8983,0.8877,13.09,10.0,52355,40000,120000,0.5637083333333333
+naive_peek_e5,unadjusted,6,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8697,0.803,16.25,15.0,64993,60000,120000,0.45839166666666664
+naive_peek_e10,unadjusted,3,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8463,0.6747,19.43,20.0,77707,80000,120000,0.35244166666666665
+naive_peek_e30,unadjusted,1,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8197,0.0,30.0,30.0,120000,120000,120000,0.0
+bonferroni_e1,bonferroni,30,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.483,0.4653,23.93,30.0,95727,120000,120000,0.20227499999999998
+bonferroni_e5,bonferroni,6,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.6403,0.5427,22.27,25.0,89080,100000,120000,0.2576666666666667
+bonferroni_e10,bonferroni,3,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.7133,0.503,22.62,20.0,90480,80000,120000,0.246
+bonferroni_e30,bonferroni,1,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8197,0.0,30.0,30.0,120000,120000,120000,0.0
+obf_e5,group sequential,6,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.7957,0.6597,23.05,25.0,92200,100000,120000,0.2316666666666667
+obf_e10,group sequential,3,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8047,0.4703,24.89,30.0,99573,120000,120000,0.17022499999999996
+obf_e30,group sequential,1,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8193,0.0,30.0,30.0,120000,120000,120000,0.0
+msprt_tau0.005,always-valid,30,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.5187,0.499,23.84,30.0,95344,120000,120000,0.2054666666666667
+bayes_sd0.01,bayesian,30,bernoulli lift=+5.0% traffic=2000/day horizon=30d,0.05,30,0.8853,0.874,14.12,12.0,56477,48000,120000,0.5293583333333334
